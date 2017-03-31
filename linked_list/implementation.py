@@ -96,13 +96,13 @@ class LinkedList(AbstractLinkedList):
         return len(self)
 
     def pop(self, index=None):
-        
+        if index is None:
+            index = len(self)-1
         if index >= len(self):
             raise IndexError
         if len(self) == 0:
             raise IndexError
-        if index is None:
-            index = len(self)-1
+        
         previous = None 
         current = self.start
         ticker = 0
